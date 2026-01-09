@@ -1,68 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>My Movie Library</title>
+    <title>Minha Biblioteca de Filmes</title>
 </head>
 <body data-theme="dark">
     
     <div class="container">
-
         <header>
-
             <h1>CineLog🎬</h1>
             <button id="theme-toggle" class="theme-btn">🌙</button>
         </header>
 
         <section class="add-movie-section">
-
             <form id="movie-form" class="input-group">
-
                 <input type="text" id="movie-title" placeholder="Nome do Filme" required>
-                <input type="text" id="movie-genre" placeholder="Gênero (Ação,Drama...)" required>
+                <input type="text" id="movie-genre" placeholder="Gênero (Ação, Drama...)" required>
                 <input type="url" id="movie-poster" placeholder="URL da Capa (Imagem)">
                 <div class="rating-input">
                      <span>Nota:</span>
                      <input type="number" id="movie-rating" min="1" max="5" placeholder="1-5" required>
                 </div>
-
                 <button type="submit" id="add-btn">Salvar na Coleção</button>
-
             </form>
-
         </section>
 
-            <div class="search-bar">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Filtrar sua Coleção...">
+        </div>
 
-            <input type="text"id="search-input" placeholder="Filtrar sua Coleção...">
-
-           </div>
-
-
-
-      <main id="movie-grid" class="movie-grid">
-
-
-
-      </main>   
-
-
+        <main id="movie-grid" class="movie-grid"></main>    
+        
+        <footer class="main-footer">
+            <p class="footer-dev">
+                Desenvolvido com 🚀 por 
+                <a href="https://www.linkedin.com/in/gabriel-alexandre-marques-cardoso-0041101ab/" target="_blank">
+                    Gabriel Cardoso
+                </a>
+            </p>
+        </footer>
     </div>
 
-    <footer class="main-footer">
-        <p class="footer-dev">
-            Desenvolvido com 🚀 por 
-            <a href="https://www.linkedin.com/in/gabriel-alexandre-marques-cardoso-0041101ab/" target="_blank">
-                Gabriel Cardoso
-            </a>
-        </p>
-    </footer>
-
-
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
