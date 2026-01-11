@@ -24,29 +24,34 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('cineLog_theme', newTheme);
 });
 
-movieForm.addEventListener('submit', (e) =>  {
+movieForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-e.preventDefault();
+    const titleEl = document.getElementById('movie-title');
+    const genreEl = document.getElementById('movie-genre');
+    const posterEl = document.getElementById('movie-poster');
+    const ratingEl = document.getElementById('movie-rating');
 
-const title = document.getElementById('movie-title').value;
-const genre = document.getElementById('movie-genre').value;
-const poster=document.getElementById('movie-poster').value || 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300&h=450&auto=format&fit=crop';
-const rating = document.getElementById('movie-rating').value;
+    if (!titleEl.value || !genreEl.value) {
+        alert("Por favor, preencha o título e o gênero!");
+        return;
+    }
 
-const newMovie = {
+    const newMovie = {
+        id: Date.now(),
+        title: titleEl.value,
+        genre: genreEl.value,
+        poster: posterEl.value || 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300&h=450&auto=format&fit=crop',
+        rating: ratingEl.value
+    };
 
-    id:Date.now(),
-    title,
-    genre,
-    poster,
-    rating
-
-};
-
-myMovies.push(newMovie);
-salvarESalvarguardar();
-movieForm.reset();
-
+    myMovies.push(newMovie);
+    salvarESalvarguardar(); 
+    movieForm.reset();
+    
+    document.activeElement.blur(); 
+    
+    console.log("Filme salvo com sucesso!");
 });
 
 function atualizarInterface(FilmesParaExibir = myMovies) {
