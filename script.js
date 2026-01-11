@@ -82,12 +82,9 @@ FilmesParaExibir.forEach((movie) => {
 }
 
 function salvarESalvarguardar() {
-
- localStorage.setItem('cineLog_movies', JSON.stringify(myMovies));
-    atuaalizarInterface();
-
+    localStorage.setItem('cineLog_movies', JSON.stringify(myMovies));
+    atualizarInterface(); 
 }
-
 
 window.removerFilme = (id) => {
 
